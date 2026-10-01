@@ -28,7 +28,7 @@ export default function App() {
     }
 
     return (
-        <>
+        <div className="container">
 
             <input
                 type="text"
@@ -42,44 +42,25 @@ export default function App() {
             </button>
 
             {erro && (
-                <p style={{ color: "red" }}>
+                <p className="erro">
                     {erro}
                 </p>
             )}
 
             {dadosEndereco.cep && (
-                <div>
+                <div className="resultado">
 
                     <h2>Endereço encontrado</h2>
 
-                    <p>
-                        <strong>CEP:</strong>{" "}
-                        {dadosEndereco.cep}
-                    </p>
-
-                    <p>
-                        <strong>Logradouro:</strong>{" "}
-                        {dadosEndereco.logradouro}
-                    </p>
-
-                    <p>
-                        <strong>Bairro:</strong>{" "}
-                        {dadosEndereco.bairro}
-                    </p>
-
-                    <p>
-                        <strong>Cidade:</strong>{" "}
-                        {dadosEndereco.localidade}
-                    </p>
-
-                    <p>
-                        <strong>Estado:</strong>{" "}
-                        {dadosEndereco.uf}
-                    </p>
+                    <p><strong>CEP:</strong> {dadosEndereco.cep}</p>
+                    <p><strong>Logradouro:</strong> {dadosEndereco.logradouro}</p>
+                    <p><strong>Bairro:</strong> {dadosEndereco.bairro}</p>
+                    <p><strong>Cidade:</strong> {dadosEndereco.localidade}</p>
+                    <p><strong>Estado:</strong> {dadosEndereco.uf}</p>
 
                 </div>
             )}
 
-        </>
+        </div>
     )
 }
